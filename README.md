@@ -16,7 +16,11 @@
 ```sh
 npm install
 npm run lint
+npm run preview
 ```
+
+`npm run preview` の実行中は、ブラウザで `http://127.0.0.1:4173` を開くと
+公開前の職務経歴書を確認できます。
 
 ## GitHub Pages の公開設定
 
