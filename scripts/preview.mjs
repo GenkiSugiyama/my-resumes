@@ -20,26 +20,31 @@ const html = `<!doctype html>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>杉山元基の職務経歴書</title>
     <style>
-      :root { color-scheme: light; --ink: #17212b; --muted: #59636e; --accent: #176b87; --border: #d8e1e8; --surface: #f6f9fb; }
+      :root { color-scheme: light; --ink: #17202a; --muted: #5f6b76; --accent: #176b73; --border: #dce4e7; --surface: #f7f9fa; }
       * { box-sizing: border-box; }
-      body { margin: 0; color: var(--ink); background: #fff; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif; line-height: 1.85; }
-      header { padding: 3.5rem 1.5rem 3rem; color: #fff; text-align: center; background: linear-gradient(135deg, #123c52 0%, #176b87 56%, #2397a5 100%); }
-      header h1 { margin: 0; font-size: clamp(2rem, 6vw, 3.25rem); letter-spacing: .04em; }
-      header p { margin: 1rem auto 0; opacity: .88; }
-      main { max-width: 58rem; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+      body { margin: 0; color: var(--ink); background: #fff; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif; line-height: 1.75; }
+      header { padding: 2.5rem 1.5rem 2.25rem; color: var(--ink); text-align: center; background: var(--surface); border-bottom: 1px solid var(--border); }
+      header h1 { margin: 0; font-size: clamp(1.8rem, 5vw, 2.6rem); letter-spacing: .02em; }
+      header p { margin: .6rem auto 0; color: var(--muted); }
+      main { max-width: 64rem; margin: 0 auto; padding: 2rem 1.5rem 5rem; }
       main > h1 { display: none; }
       h2, h3, h4, h5 { color: var(--ink); line-height: 1.45; }
-      h2 { margin-top: 3rem; padding-bottom: .45rem; border-bottom: 2px solid var(--accent); }
-      h3 { margin-top: 2.25rem; }
-      h4 { margin-top: 1.5rem; color: var(--accent); }
-      h5 { margin-bottom: .4rem; font-size: 1rem; }
+      h2 { margin-top: 4rem; padding-bottom: .55rem; border-bottom: 1px solid var(--border); font-size: 1.65rem; }
+      h3 { margin-top: 2.5rem; font-size: 1.25rem; }
+      h4 { margin-top: 2rem; color: var(--accent); }
+      h5 { margin: 1.5rem 0 .35rem; font-size: 1rem; }
+      main > h2:first-of-type { margin-top: 2rem; border-bottom: 0; font-size: 1.1rem; }
+      main > h2:first-of-type + ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: .5rem 1.25rem; margin: 0; padding: 1rem 1.25rem; border: 1px solid var(--border); border-radius: .5rem; background: var(--surface); list-style-position: inside; }
+      h2 + p { margin-top: 1.25rem; }
+      hr { margin: 5rem 0 0; border: 0; border-top: 3px double var(--border); }
+      strong { color: #0f4f55; }
       a { color: var(--accent); }
-      table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; }
+      table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 1.75rem; }
       th, td { padding: .7rem .8rem; border: 1px solid var(--border); text-align: left; vertical-align: top; }
       th { width: 9rem; background: var(--surface); }
-      li + li { margin-top: .35rem; }
+      li + li { margin-top: .45rem; }
       @media (max-width: 640px) { main { padding-inline: 1rem; } table { display: block; overflow-x: auto; } th { min-width: 7rem; } }
-      @media print { header { display: none; } main { max-width: none; padding: 0; font-size: 10.5pt; } h2, h3, h4, h5 { break-after: avoid; } }
+      @media print { header { display: none; } main { max-width: none; padding: 0; font-size: 10.5pt; } main > h2:first-of-type + ul { display: block; padding: 0; border: 0; background: transparent; } h2 { margin-top: 2rem; } h2, h3, h4, h5 { break-after: avoid; } }
     </style>
   </head>
   <body>
@@ -68,4 +73,3 @@ const server = createServer((request, response) => {
 server.listen(port, host, () => {
   console.log(`Preview: http://${host}:${port}`);
 });
-
