@@ -1,0 +1,9 @@
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+  - jekyll-remote-theme
+
+title: 杉山元基の職務経歴書
+description: バックエンドエンジニアとしての職務経歴とスキル
+lang: ja-JP
+show_downloads: false
+

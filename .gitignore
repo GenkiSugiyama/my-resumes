@@ -1,0 +1,12 @@
+.DS_Store
+node_modules/
+
+# 個人情報や編集用の原本は公開リポジトリに含めない
+*.docx
+*.pdf
+
+# ローカル生成物
+_site/
+.jekyll-cache/
+.sass-cache/
+

@@ -1,0 +1,17 @@
+{
+  "name": "my-resumes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GitHub Pagesで公開する職務経歴書",
+  "scripts": {
+    "lint": "npm run lint:text && npm run lint:markdown",
+    "lint:text": "textlint README.md docs/**/*.md",
+    "lint:markdown": "markdownlint-cli2"
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "^0.23.3",
+    "textlint": "^15.8.0",
+    "textlint-filter-rule-comments": "^1.3.0",
+    "textlint-rule-preset-ja-technical-writing": "^12.0.2"
+  }
+}
