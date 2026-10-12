@@ -33,8 +33,6 @@ const html = `<!doctype html>
       h3 { margin-top: 2.5rem; font-size: 1.25rem; }
       h4 { margin-top: 2rem; color: var(--accent); }
       h5 { margin: 1.5rem 0 .35rem; font-size: 1rem; }
-      main > h2:first-of-type { margin-top: 2rem; border-bottom: 0; font-size: 1.1rem; }
-      main > h2:first-of-type + ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: .5rem 1.25rem; margin: 0; padding: 1rem 1.25rem; border: 1px solid var(--border); border-radius: .5rem; background: var(--surface); list-style-position: inside; }
       h2 + p { margin-top: 1.25rem; }
       hr { margin: 5rem 0 0; border: 0; border-top: 3px double var(--border); }
       strong { color: #0f4f55; }
@@ -44,7 +42,7 @@ const html = `<!doctype html>
       th { width: 9rem; background: var(--surface); }
       li + li { margin-top: .45rem; }
       @media (max-width: 640px) { main { padding-inline: 1rem; } table { display: block; overflow-x: auto; } th { min-width: 7rem; } }
-      @media print { header { display: none; } main { max-width: none; padding: 0; font-size: 10.5pt; } main > h2:first-of-type + ul { display: block; padding: 0; border: 0; background: transparent; } h2 { margin-top: 2rem; } h2, h3, h4, h5 { break-after: avoid; } }
+      @media print { header { display: none; } main { max-width: none; padding: 0; font-size: 10.5pt; } h2 { margin-top: 2rem; } h2, h3, h4, h5 { break-after: avoid; } }
     </style>
   </head>
   <body>
