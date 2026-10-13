@@ -5,9 +5,10 @@
   "description": "GitHub Pagesで公開する職務経歴書",
   "scripts": {
     "lint": "npm run lint:text && npm run lint:markdown",
-    "lint:text": "textlint README.md docs/**/*.md",
+    "lint:text": "textlint README.md resume-short.md docs/**/*.md",
     "lint:markdown": "markdownlint-cli2",
-    "preview": "node scripts/preview.mjs"
+    "preview": "node scripts/preview.mjs",
+    "verify": "npm run lint && node scripts/verify.mjs"
   },
   "devDependencies": {
     "markdown-it": "^15.0.2",

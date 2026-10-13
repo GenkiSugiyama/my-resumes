@@ -26,5 +26,5 @@ jobs:
       - name: 依存関係をインストール
         run: npm ci
       - name: 文書を検査
-        run: npm run lint
+        run: npm run verify
 

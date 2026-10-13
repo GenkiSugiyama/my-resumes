@@ -14,8 +14,8 @@
 ## 確認コマンド
 
 ```sh
-npm install
-npm run lint
+npm ci
+npm run verify
 npm run preview
 ```
 
@@ -34,7 +34,13 @@ GitHub に Push した後、リポジトリの `Settings` → `Pages` で次の�
 
 ## 更新方針
 
-1. `docs/index.md` を更新する
-2. `npm run lint` で文章と Markdown を確認する
+公開用の原稿とページは、非公開の正本から生成します。
+このリポジトリ単体には非公開の正本や生成用の個人情報を含めません。
+
+1. 作業用ワークスペースのキャリア更新手順に従って正本を編集し、原稿とページを生成する
+2. `npm run verify` で文章、Markdown、本文の同期、公開対象を確認する
 3. 差分を確認してコミットする
-4. GitHub に Push する
+4. 公開の依頼がある場合にGitHubへPushする
+
+`resume-short.md` と `docs/index.md` は生成物です。直接編集すると、
+次回のワークスペース側の生成処理が不一致を検出します。

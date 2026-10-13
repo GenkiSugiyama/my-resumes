@@ -9,6 +9,7 @@
   },
   "globs": [
     "README.md",
+    "resume-short.md",
     "docs/**/*.md"
   ],
   "ignores": [
