@@ -6,12 +6,15 @@ const host = "127.0.0.1";
 const port = 4173;
 const sourceUrl = new URL("../docs/index.md", import.meta.url);
 const markdown = await readFile(sourceUrl, "utf8");
-const body = markdown.replace(/^---\n[\s\S]*?\n---\n/, "");
+const body = markdown.replace(/^---\n(?:[\s\S]*?\n)?---\n/, "");
 const renderer = new MarkdownIt({
   html: false,
   linkify: true,
   typographer: false
 });
+const siteStyles = (await readFile(new URL("../docs/assets/css/style.scss", import.meta.url), "utf8"))
+  .replace(/^---\n(?:[\s\S]*?\n)?---\n/, "")
+  .replace(/^@import[^;]+;\s*/m, "");
 
 const html = `<!doctype html>
 <html lang="ja">
@@ -43,6 +46,7 @@ const html = `<!doctype html>
       li + li { margin-top: .45rem; }
       @media (max-width: 640px) { main { padding-inline: 1rem; } table { display: block; overflow-x: auto; } th { min-width: 7rem; } }
       @media print { header { display: none; } main { max-width: none; padding: 0; font-size: 10.5pt; } h2 { margin-top: 2rem; } h2, h3, h4, h5 { break-after: avoid; } }
+      ${siteStyles}
     </style>
   </head>
   <body>
@@ -50,7 +54,7 @@ const html = `<!doctype html>
       <h1>杉山元基の職務経歴書</h1>
       <p>バックエンドエンジニアとしての職務経歴とスキル</p>
     </header>
-    <main>${renderer.render(body)}</main>
+    <main class="main-content">${renderer.render(body)}</main>
   </body>
 </html>`;
 
